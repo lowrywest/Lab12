@@ -96,9 +96,12 @@ public class DataEntryFrame extends JFrame
 	private void setVisuals(FormData data)
 	{
 		// TODO: set the text fields and the signature as corresponding to the fields in FormData.
-		char middleInit= middleInitial.getText().charAt(0);
-		data.setValues(firstName.getText(),middleInit, lastName.getText(), displayName.getText(), SSN.getText(),
+		//char middleInit= middleInitial.getText().charAt(0);
+		/*
+		 * data.setValues(firstName.getText(),middleInit, lastName.getText(), displayName.getText(), SSN.getText(),
+		 
 				phone.getText(), email.getText(),address.getText(),spanel.getSignature());
+				*/
 	}
 
 	/**
@@ -127,7 +130,15 @@ public class DataEntryFrame extends JFrame
 		this.add(formSelect);
 
 		// TODO: add in all form-fillable components:
-		JPanel formFill = new JPanel(/* TODO: add layout manager */);
+		JPanel formFill = new JPanel(new GridLayout(8, 1));
+		formFill.add(firstName);
+		formFill.add(middleInitial);
+		formFill.add(lastName);
+		formFill.add(displayName);
+		formFill.add(SSN);
+		formFill.add(phone);
+		formFill.add(email);
+		formFill.add(address);
 		// TODO: add to panel...
 		this.add(formFill);
 
@@ -135,7 +146,9 @@ public class DataEntryFrame extends JFrame
 		spanel.addMouseMotionListener(new MouseMotionListener()
 		{
 			@Override
-			public void mouseMoved(MouseEvent e) {}
+			public void mouseMoved(MouseEvent e) {
+				
+			}
 
 			@Override
 			public void mouseDragged(MouseEvent e)
